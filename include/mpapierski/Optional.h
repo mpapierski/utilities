@@ -14,4 +14,6 @@ namespace mpapierski {
 
 template <typename T> using optional = MPAPIERSKI_OPTIONAL_PREFIX__ optional<T>;
 inline constexpr auto nullopt = MPAPIERSKI_OPTIONAL_PREFIX__ nullopt;
+using MPAPIERSKI_OPTIONAL_PREFIX__ make_optional;
+
 }
