@@ -1,12 +1,14 @@
 #define CATCH_CONFIG_MAIN
 
-#include "mpapierski/Env.h"
-
 #include "catch.hpp"
+#include "mpapierski/Env.h"
+#include <string_view>
+
+using namespace std::literals;
 
 TEST_CASE("Invalid env variable", "[env]") {
   auto value = mpapierski::getEnv("UNITTEST");
-  REQUIRE(value == std::nullopt);
+  REQUIRE(value == mpapierski::nullopt);
 }
 
 TEST_CASE("Valid env var", "[env]") {
@@ -15,5 +17,5 @@ TEST_CASE("Valid env var", "[env]") {
     ~Scoped() { ::unsetenv("UNITTEST"); }
   } scoped;
   auto value = mpapierski::getEnv("UNITTEST");
-  REQUIRE(value == "Value");
+  REQUIRE(value == "Value"sv);
 }

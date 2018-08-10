@@ -1,6 +1,6 @@
 #pragma once
 
-#include <optional>
+#include "mpapierski/Optional.h"
 #include <string_view>
 
 namespace mpapierski {
@@ -11,6 +11,6 @@ namespace mpapierski {
  * @param name Environment variable name
  * @return Returns an optional string if the variable exists, nullopt otherwise.
  */
-std::optional<std::string_view> getEnv(std::string_view name);
+mpapierski::optional<std::string_view> getEnv(std::string_view name);
 
 } // namespace mpapierski
